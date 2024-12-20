@@ -26,7 +26,7 @@ class Player
 public:
     std::string ClientVersion = "1.0";
     int id[2] = {0, 1};
-    std::vector<int> AllianceID = {0, 0};
+    std::vector<int> club = {0, 0};
     std::string token;
     std::string name = "NBS";
     bool registered = false;
