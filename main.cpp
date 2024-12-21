@@ -1,6 +1,7 @@
 #include <iostream>
 #include <unistd.h>
 #include "Classes/Server.h"
+#include <thread>
 
 int main()
 {
@@ -19,10 +20,9 @@ int main()
         std::cout << "\033[94m[INFO]\033[0m Socket created and bound to port " << server.port << "\n";
     }
 
-    if (socket >= 0)
-    {
-        close(socket);
-    }
+    std::thread listenerThread(&Server::listenForConnections, &server);
+    listenerThread.detach();
+    std::this_thread::sleep_for(std::chrono::seconds(60));
 
     return 0;
 }
