@@ -1,9 +1,9 @@
 CXX = g++
-CXXFLAGS = -Wall -std=c++11
+CXXFLAGS = -Wall 
 
 TARGET = nbs
 
-SOURCES = main.cpp Classes/Server.cpp
+SOURCES = main.cpp Classes/Server.cpp Classes/Bytestream.cpp Classes/ChecksumEncoder.cpp Classes/Player.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 all: $(TARGET)

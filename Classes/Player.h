@@ -47,6 +47,7 @@ public:
                 0,   // PowerPoints
                 2    // State
                 )}};
+    Player();
 };
 
 
