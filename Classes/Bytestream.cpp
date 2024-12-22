@@ -62,3 +62,10 @@ void Bytestream::writeInt(int value)
     checksumEncoder.writeInt(value);
     writeIntToByteArray(value);
 }
+
+void Bytestream::readLongLong()
+{
+    bitoffset = 0;
+    int high = readInt();
+    int low = readInt();
+}
