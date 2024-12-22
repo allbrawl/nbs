@@ -17,8 +17,8 @@ public:
     int readInt8();
     int readInt16();
     int readInt24();
-    int readIntLittleEndian(); // Little Endian is pretty much the same as Big Endian, but the bytes are reversed. 
-    int readLong(LogicLong *logicLong);
+    int readIntLittleEndian(); // Little Endian is pretty much the same as Big Endian, but the bytes are reversed.
+    void readLong(LogicLong *logicLong);
     void readLongLong();
     void writeInt(int value);
     void writeIntToByteArray(int value);

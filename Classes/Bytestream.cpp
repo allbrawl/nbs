@@ -63,6 +63,15 @@ void Bytestream::writeInt(int value)
     writeIntToByteArray(value);
 }
 
+void Bytestream::readLong(LogicLong *logicLong)
+{
+    bitoffset = 0;
+    int high = readInt();
+    int low = readInt();
+    logicLong->high = high;
+    logicLong->high = high;
+}
+
 void Bytestream::readLongLong()
 {
     bitoffset = 0;
