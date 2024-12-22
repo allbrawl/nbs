@@ -78,3 +78,11 @@ void Bytestream::readLongLong()
     int high = readInt();
     int low = readInt();
 }
+
+void Bytestream::readShort()
+{
+    bitoffset = 0;
+    int result = (messagePayload[offset] << 8);
+    result += (messagePayload[offset + 1]);
+    offset += 2;
+}

@@ -20,6 +20,7 @@ public:
     int readIntLittleEndian(); // Little Endian is pretty much the same as Big Endian, but the bytes are reversed.
     void readLong(LogicLong *logicLong);
     void readLongLong();
+    void readShort();
     void writeInt(int value);
     void writeIntToByteArray(int value);
 };
