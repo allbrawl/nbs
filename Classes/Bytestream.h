@@ -21,6 +21,7 @@ public:
     void readLong(LogicLong *logicLong);
     void readLongLong();
     void readShort();
+    void readString();
     void writeInt(int value);
     void writeIntToByteArray(int value);
 };

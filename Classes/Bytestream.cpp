@@ -1,5 +1,6 @@
 #include "Bytestream.h"
 #include "ChecksumEncoder.h"
+#include <iostream>
 
 int Bytestream::readInt()
 {
@@ -85,4 +86,20 @@ void Bytestream::readShort()
     int result = (messagePayload[offset] << 8);
     result += (messagePayload[offset + 1]);
     offset += 2;
+}
+
+void Bytestream::readString()
+{
+    bitoffset = 0;
+    int length = readInt();
+    std::string result;
+    if (length < 0)
+    {
+        std::cerr << "\033[91m[ERROR]\033[0m Invalid string length\n";
+        return;
+    }
+    for (int i = 0; i < length; i++)
+    {
+        result += messagePayload[offset++];
+    }
 }
